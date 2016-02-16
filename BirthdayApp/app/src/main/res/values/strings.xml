@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Mi cumpleaños</string>
+    <string name="action_info">Información</string>
+    <string name="action_settings">Close</string>
+</resources>
