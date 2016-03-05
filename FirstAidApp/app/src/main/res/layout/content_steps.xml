@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.xosel.firstaidapp.StepsActivity"
+    tools:showIn="@layout/activity_steps">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollY="@dimen/activity_vertical_margin"
+        android:paddingTop="16dp"
+        android:background="@color/colorAccent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Paso 1: Evalúa la escena"
+            android:textStyle="bold"
+            android:background="@color/colorAccent"
+            android:textSize="20sp"
+            android:paddingTop="16dp"
+            android:paddingLeft="16dp"
+            android:paddingBottom="16dp"
+            android:paddingRight="16dp"
+            android:textColor="#fff"
+            android:onClick="verEvaluar"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Paso 2: Consigue ayuda"
+            android:textStyle="bold"
+            android:background="@color/colorAccent"
+            android:textSize="20sp"
+            android:paddingTop="16dp"
+            android:paddingLeft="16dp"
+            android:paddingBottom="16dp"
+            android:paddingRight="16dp"
+            android:textColor="#fff"
+            android:onClick="mostrarMenuAyuda"
+            />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/menuAyuda"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Llamar a la Cruz Roja"
+                android:textStyle="bold"
+                android:background="@color/colorSub"
+                android:textSize="20sp"
+                android:paddingTop="16dp"
+                android:paddingLeft="16dp"
+                android:paddingBottom="16dp"
+                android:paddingRight="16dp"
+                android:id="@+id/cruzroja"
+                android:onClick="llamarCruzRoja"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Llamar a mi familiar"
+                android:textStyle="bold"
+                android:background="@color/colorSub"
+                android:textSize="20sp"
+                android:paddingTop="16dp"
+                android:paddingLeft="16dp"
+                android:paddingBottom="16dp"
+                android:paddingRight="16dp"
+                android:id="@+id/familiar"
+                android:onClick="llamarFamiliar"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Enviar alerta"
+                android:textStyle="bold"
+                android:background="@color/colorSub"
+                android:textSize="20sp"
+                android:paddingTop="16dp"
+                android:paddingLeft="16dp"
+                android:paddingBottom="16dp"
+                android:paddingRight="16dp"
+                android:visibility="visible"
+                android:onClick="enviarAlerta"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Paso 3: Cuida de la persona"
+            android:textStyle="bold"
+            android:background="@color/colorAccent"
+            android:textSize="20sp"
+            android:paddingTop="16dp"
+            android:paddingLeft="16dp"
+            android:paddingBottom="16dp"
+            android:paddingRight="16dp"
+            android:textColor="#fff"
+            android:id="@+id/cuida_persona"
+            android:onClick="mostrarCuidaPersona"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Paso 4: Evalúa al accidentado"
+            android:textStyle="bold"
+            android:background="@color/colorAccent"
+            android:textSize="20sp"
+            android:paddingTop="16dp"
+            android:paddingLeft="16dp"
+            android:paddingBottom="16dp"
+            android:paddingRight="16dp"
+            android:textColor="#fff"
+            android:id="@+id/evaluacion_accidentado"
+            android:onClick="mostrarEvaluacionAccidentado"
+            />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/menuEvaluacionAccidentado"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Consciencia"
+                android:textStyle="bold"
+                android:background="@color/colorSub"
+                android:textSize="20sp"
+                android:paddingTop="16dp"
+                android:paddingLeft="16dp"
+                android:paddingBottom="16dp"
+                android:paddingRight="16dp"
+                android:id="@+id/consciencia"
+                android:onClick="mostrarEvaluaConsciencia"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pulso y Respiración"
+                android:textStyle="bold"
+                android:background="@color/colorSub"
+                android:textSize="20sp"
+                android:paddingTop="16dp"
+                android:paddingLeft="16dp"
+                android:paddingBottom="16dp"
+                android:paddingRight="16dp"
+                android:id="@+id/pulso_respiracion"
+                android:onClick="mostrarEvaluaPulso"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hemorragia"
+                android:textStyle="bold"
+                android:background="@color/colorSub"
+                android:textSize="20sp"
+                android:paddingTop="16dp"
+                android:paddingLeft="16dp"
+                android:paddingBottom="16dp"
+                android:paddingRight="16dp"
+                android:id="@+id/hemorragia"
+                android:onClick="mostrarEvaluaHemorragia"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RCP - Reanimación Cardiopulmonar"
+            android:textStyle="bold"
+            android:background="@color/colorAccent"
+            android:textSize="20sp"
+            android:paddingTop="16dp"
+            android:paddingLeft="16dp"
+            android:paddingBottom="16dp"
+            android:paddingRight="16dp"
+            android:textColor="#fff"
+            android:id="@+id/reanimacion_cardiopulmonar"
+            android:onClick="mostrarRCP"
+            />
+
+    </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>

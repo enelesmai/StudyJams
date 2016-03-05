@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Manual Primeros Auxilios</string>
+    <string name="action_settings">Configurar Número de Familiar</string>
+    <string name="description_step_one">
+        Evalúa la situación, ¿hay cosas que pueden ponerte en riesgo de sufrir una lesión?¿Están tú o la víctima amenazados por fuego, humo tóxico o gases, un edificio inestable, cables eléctricos u otra situación peligrosa?
+        Si acercarte a la víctima pone en peligro tu vida, busca ayuda profesional inmediatamente. Los primeros auxilios son útiles si los puedes aplicar de forma segura sin hacerte daño.
+        Si no puedes mover al accidentado, señaliza el lugar.
+    </string>
+    <string name="description_step_two">
+        Llama a las autoridades o a los servicios de emergencia inmediatamente si piensas que alguien está gravemente herido. Si eres la única persona en el sitio, trata de estabilizar la respiración del paciente antes de buscar ayuda. No dejes sola a la víctima por demasiado tiempo.
+    </string>
+    <string name="description_step_three">
+        El cuidado de alguien que acaba de tener un trauma serio requiere tanto de tratamiento físico como apoyo emocional. Recuerda permanecer en calma y tratar de tranquilizar a la víctima haciéndole saber que la ayuda está en camino y que todo saldrá bien.
+    </string>
+    <string name="description_step_four">
+        Determina la capacidad de respuesta de la víctima. Si una persona está inconsciente, trata de despertarla tocando suavemente sus manos o pies desnudos, o incluso hablándole. Si no responde a la actividad, el sonido, el contacto y otros estímulos, verifica si está respirando.
+    </string>
+    <string name="description_step_five">
+        Verifica su respiración y pulso. Si la víctima está inconsciente y no puedes despertarla, verifica su respiración: observa si el área del pecho se eleva; escucha si hay ruido de aire entrando o saliendo; siente el aliento usando un lado de tu cara. Si no hay signos aparentes de respiración, trata de sentir su pulso.
+    </string>
+    <string name="description_step_six">
+        Primero que todo evita que se desangre. Después de cerciorarte de que la víctima está respirando y tiene pulso, tu siguiente prioridad es controlar cualquier hemorragia. El control del sangrado es una de las cosas más importantes que puedes hacer para salvar a una víctima de trauma. Aplica una presión directa sobre una herida antes de tratar cualquier otro método para controlar una hemorragia.
+    </string>
+</resources>
