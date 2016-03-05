@@ -121,7 +121,7 @@ public class StepsActivity extends AppCompatActivity {
     }
 
     public void llamarFamiliar(View view){
-        llamar("3121223099");
+        llamar("3123207861");
     }
 
     public void enviarAlerta(View view){
