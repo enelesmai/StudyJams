@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CoffeeChain</string>
+    <string name="str_quantity_text_view">Quantity: </string>
+    <string name="str_price_text_view">Price: </string>
+    <string name="str_total_text_view">Total: </string>
+    <string name="str_buy_button">Buy</string>
+    <string name="str_increment_button">+</string>
+    <string name="str_decrement_button">-</string>
+    <string name="dialog_message">how are you?</string>
+    <string name="dialog_title">hello</string>
+</resources>
