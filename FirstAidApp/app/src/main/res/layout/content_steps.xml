@@ -33,7 +33,7 @@
             android:paddingBottom="16dp"
             android:paddingRight="16dp"
             android:textColor="#fff"
-            android:onClick="verEvaluar"
+            android:onClick="mostrarEvaluar"
             />
 
         <TextView
@@ -134,7 +134,7 @@
             android:paddingRight="16dp"
             android:textColor="#fff"
             android:id="@+id/evaluacion_accidentado"
-            android:onClick="mostrarEvaluacionAccidentado"
+            android:onClick="mostrarMenuEvaluacionAccidentado"
             />
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"

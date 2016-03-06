@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Manual Primeros Auxilios</string>
+    <string name="phone_number_label">Número de teléfono</string>
     <string name="action_settings">Configurar Número de Familiar</string>
     <string name="description_step_one">
         Evalúa la situación, ¿hay cosas que pueden ponerte en riesgo de sufrir una lesión?¿Están tú o la víctima amenazados por fuego, humo tóxico o gases, un edificio inestable, cables eléctricos u otra situación peligrosa?
-        Si acercarte a la víctima pone en peligro tu vida, busca ayuda profesional inmediatamente. Los primeros auxilios son útiles si los puedes aplicar de forma segura sin hacerte daño.
-        Si no puedes mover al accidentado, señaliza el lugar.
+        Si acercarte a la víctima pone en peligro tu vida, busca ayuda profesional inmediatamente. Si no puedes mover al accidentado, señaliza el lugar.
     </string>
     <string name="description_step_two">
         Llama a las autoridades o a los servicios de emergencia inmediatamente si piensas que alguien está gravemente herido. Si eres la única persona en el sitio, trata de estabilizar la respiración del paciente antes de buscar ayuda. No dejes sola a la víctima por demasiado tiempo.

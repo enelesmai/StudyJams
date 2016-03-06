@@ -10,29 +10,21 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 public class StepsActivity extends AppCompatActivity {
 
+    private SettingsActivity settings = new SettingsActivity();
     private boolean flagMostradoAyuda = false;
     private boolean flagMostradoEvaluacionAccidentado = false;
     private int currentStep = 0;
+    private String numberPhone = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_steps);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                llamarCruzRoja(view);
-            }
-        });
+        init();
     }
 
     @Override
@@ -51,15 +43,49 @@ public class StepsActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Snackbar.make(null, "Muy pronto!! :D", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            setContentView(R.layout.configura_numero);
+            viewNumBerPhone();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    public void verEvaluar(View view){
+    protected void init(){
+        MyApp.setContext(getApplicationContext());
+
+        setContentView(R.layout.activity_steps);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                llamarCruzRoja(view);
+            }
+        });
+    }
+
+    //region SET_PHONE_NUMBER
+    public  void savePhoneNumber(View view){
+        EditText phone_number_edit = (EditText) findViewById(R.id.phone_number_edit);
+        numberPhone = phone_number_edit.getText().toString();
+        settings.saveNumberFamiliar(numberPhone);
+        verActividadPrincipal(view);
+    }
+
+    public void viewNumBerPhone(){
+        EditText phone_number_edit = (EditText) findViewById(R.id.phone_number_edit);
+        numberPhone = settings.getNumberFamiliar();
+        if(numberPhone != null && !numberPhone.isEmpty()){
+            phone_number_edit.setText(numberPhone);
+        }
+    }
+    //region
+
+    //region OPCIONES_MENU
+    public void mostrarEvaluar(View view){
         currentStep = 1;
         verActividad(view);
     }
@@ -102,7 +128,7 @@ public class StepsActivity extends AppCompatActivity {
         }
     }
 
-    public void mostrarEvaluacionAccidentado(View view){
+    public void mostrarMenuEvaluacionAccidentado(View view){
         LinearLayout menuAccidentado = (LinearLayout) findViewById(
                 R.id.menuEvaluacionAccidentado
         );
@@ -115,32 +141,12 @@ public class StepsActivity extends AppCompatActivity {
             flagMostradoEvaluacionAccidentado=true;
         }
     }
+    //region
 
-    public void llamarCruzRoja(View view){
-        llamar("065");
-    }
-
-    public void llamarFamiliar(View view){
-        llamar("3123207861");
-    }
-
-    public void enviarAlerta(View view){
-        Snackbar.make(view, "Muy pronto!! :D", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();
-    }
-
-    public void llamar(String tel){
-        try {
-            startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + tel)));
-        }catch (SecurityException se){
-            se.printStackTrace();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-
+    //region ACCIONES_NAVEGACION
     public void verActividadPrincipal(View view){
-        setContentView(R.layout.activity_steps);
+        currentStep = 0;
+        verActividad(view);
     }
 
     public void verActividadAnterior(View view){
@@ -157,6 +163,7 @@ public class StepsActivity extends AppCompatActivity {
         switch (currentStep){
             case 0:
                 setContentView(R.layout.activity_steps);
+                init();
                 break;
             case 1:
                 setContentView(R.layout.activity_evalua_escena);
@@ -177,10 +184,52 @@ public class StepsActivity extends AppCompatActivity {
                 setContentView(R.layout.evalua_hemorragia);
                 break;
             default:
-                Snackbar.make(view, "Muy pronto!! :D", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                sendMessageMuyPronto(view);
                 break;
         }
     }
+    //region
+
+
+    //region FEATURES
+    public void llamarCruzRoja(View view){
+        llamar("065");
+    }
+
+    public void llamarFamiliar(View view){
+        numberPhone = settings.getNumberFamiliar();
+        if(!numberPhone.isEmpty()){
+            llamar(numberPhone);
+        }else {
+            sendMessage("NO hay teléfono de familiar configurado.", view);
+        }
+    }
+
+    public void llamar(String tel){
+        try {
+            startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + tel)));
+        }catch (SecurityException se){
+            se.printStackTrace();
+            //sendMessage(se.getMessage());
+        }catch(Exception e){
+            e.printStackTrace();
+            //sendMessage(e.getMessage());
+        }
+    }
+
+    public void enviarAlerta(View view){
+        sendMessageMuyPronto(view);
+    }
+
+    public void sendMessageMuyPronto(View view){
+        Snackbar.make(view, "Muy pronto!! :D", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();
+    }
+
+    public void sendMessage(String message, View view){
+        Snackbar.make(view, message, Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();
+    }
+    //
 
 }
